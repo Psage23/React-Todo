@@ -59,6 +59,32 @@ class App extends React.Component {
     });
   };
 
+  toggleTasks = id => {
+    let tasks = this.state.tasks.slice();
+    tasks = tasks.map(task => {
+      if (task.id === id) {
+        task.completed = !task.completed;
+        return task;
+      } else {
+        return task;
+      }
+    });
+    this.setState({ tasks });
+  };
+
+  deleteItem = e => {
+    e.preventDefault()
+    let tasks = this.state.tasks.filter(task => !task.completed);
+    this.setState({tasks})
+}
+
+// clearPurchase = event => {
+//   event.preventDefault()
+//   let todos = this.state.todos.filter(todo => !todo.completed);
+//   this.setState({todos});
+// };
+
+
   render() {
     console.log(tasks);
     return (
@@ -66,7 +92,9 @@ class App extends React.Component {
         <h2>Welcome to your Todo App!</h2>
         <TodoForm addTask={this.addTask}/>
         <div>
-          <TaskList tasks={this.state.tasks} />
+          <TaskList 
+          toggleTasks={this.toggleTasks}
+          tasks={this.state.tasks} />
         </div>
       </div>
 

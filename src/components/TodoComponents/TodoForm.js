@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 class TodoForm extends React.Component {
     constructor() {
         super()
@@ -17,10 +18,6 @@ class TodoForm extends React.Component {
         this.props.addTask(this.state.newTask);
     };
 
-    // onResetClick = e => {
-    //     e.preventDefault();
-    //     this.setState(this.state.newTask);
-    // }
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
