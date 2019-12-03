@@ -1,0 +1,23 @@
+.App {
+    display: flex;
+    background-color: ;
+}
+
+.todo-list {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: yellow;
+    width: 80%;
+    padding: 20px;
+    font-family: cursive;
+}
+
+.clear {
+    background-color: blue;
+}
+
+.item.completed {
+    background-color: #7cc7d1;
+    text-decoration: line-through;
+}
